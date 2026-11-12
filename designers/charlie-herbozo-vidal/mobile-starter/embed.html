@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>ProtoStage Prototype (Embedded)</title>
+  <meta name="title" content="ProtoStage Prototype (Embedded)">
+  <meta name="description" content="Interactive prototype built with ProtoStage by Charlie Herbozo-Vidal.">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ProtoStage Prototype (Embedded)">
+  <meta property="og:description" content="Built with ProtoStage by Charlie Herbozo-Vidal">
+  <meta property="og:image" content="./og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="ProtoStage">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ProtoStage Prototype (Embedded)">
+  <meta name="twitter:description" content="Built with ProtoStage by Charlie Herbozo-Vidal">
+  <meta name="twitter:image" content="./og-card.png">
+
+  <link rel="stylesheet" href="./stage.css">
+  <link rel="stylesheet" href="./embed.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="proto-embed-body">
+  <div class="proto-embed-wrapper">
+    <div class="proto-embed-viewport">
+      <!-- Device Frame with Bezel and Corner Masking -->
+      <div class="device-frame">
+        <div class="device-frame__dynamic-island">
+          <div class="device-frame__camera"></div>
+        </div>
+
+        <!-- Screen Container -->
+        <div class="device-frame__screen">
+          <div id="app-shell">
+            <header id="header-slot"></header>
+            <main id="content-slot"></main>
+            <footer id="footer-slot"></footer>
+          </div>
+        </div>
+
+        <!-- Paints the rounded corners over the deliberately square screen -->
+        <div class="device-frame__corner-mask"></div>
+
+        <div class="device-frame__home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- Pinned Attribution and Quick Action Bar -->
+    <footer class="proto-embed-bar">
+      <div class="proto-embed-bar__attribution">
+        <span>Built with <a href="https://github.com/Charlie-HV97/protostage" target="_blank" rel="noopener noreferrer" class="proto-embed-link proto-embed-link--brand" id="proto-embed-brand">ProtoStage</a></span>
+        <span class="proto-embed-bar__sep">by</span>
+        <a href="https://charlie-hv97.github.io" target="_blank" rel="noopener noreferrer" class="proto-embed-link proto-embed-link--author" id="proto-embed-author">Charlie Herbozo-Vidal</a>
+      </div>
+      <div class="proto-embed-bar__actions">
+        <button type="button" class="proto-embed-btn" id="proto-embed-restart" title="Restart prototype flow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          <span>Restart</span>
+        </button>
+        <a href="./index.html" target="_blank" rel="noopener noreferrer" class="proto-embed-btn" title="Open full prototype in new tab">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span>Fullscreen</span>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Runtime Scripts -->
+  <script src="./shell.js"></script>
+  <script src="./flow-router.js"></script>
+  <script src="./conditions.js"></script>
+  <script src="./app.js"></script>
+  <script src="./embed.js"></script>
+</body>
+</html>

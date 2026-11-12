@@ -14,5 +14,19 @@
     ],
     "path": "designers/charlie-herbozo/mobile-starter",
     "publishedAt": "2026-11-09"
+  },
+  {
+    "slug": "mobile-starter",
+    "title": "Mobile Starter",
+    "description": "Interactive prototype 'Mobile Starter' created with ProtoStage.",
+    "author": "Charlie Herbozo-Vidal",
+    "authorSlug": "charlie-herbozo-vidal",
+    "portfolio": "https://charlie-hv97.github.io",
+    "tags": [
+      "Mobile",
+      "Interactive"
+    ],
+    "path": "designers/charlie-herbozo-vidal/mobile-starter",
+    "publishedAt": "2026-11-12"
   }
 ]

@@ -1,0 +1,246 @@
+/* stage.css — Generic device frame, authoring stage, and reviewer drawer.
+ *
+ * SCOPE: Controls everything OUTSIDE the mobile screen — device bezel,
+ * physical chrome (Dynamic Island, notch, status bar), stage controls,
+ * and the collapsible review / scenario drawer.
+ */
+
+* { box-sizing: border-box; }
+
+:root {
+  --frame-bezel-color: #0b0b0c;
+  --stage-backdrop: #0f1117;
+  --stage-backdrop-light: #f1f3f7;
+  --drawer-bg: #181a20;
+  --drawer-border: #282c37;
+  --drawer-text: #e6e8ec;
+  --drawer-muted: #8b92a2;
+  --accent-color: #6366f1;
+  --accent-hover: #4f46e5;
+  --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  background: var(--stage-backdrop);
+  font-family: var(--system-font);
+  color: var(--drawer-text);
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------------------------
+ * Stage Layout
+ * ------------------------------------------------------------------------- */
+.proto-page {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 100vh;
+  min-width: 0;
+  position: relative;
+}
+
+.stage-viewport {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  overflow: auto;
+}
+
+/* Margin auto centers when fitting, allows scrolling if taller than viewport */
+.stage-center {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------------------------------------------------------------------------
+ * Mobile Device Frame (iPhone geometry: 390x844 screen + 14px bezel)
+ * ------------------------------------------------------------------------- */
+.device-frame {
+  position: relative;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 418px;
+  min-width: 418px;
+  max-width: 418px;
+  height: 872px;
+  min-height: 872px;
+  max-height: 872px;
+  padding: 14px;
+  border-radius: 62px;
+  background: var(--frame-bezel-color);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* DELIBERATELY SQUARE SCREEN with corner mask overlay
+ * Prevents backdrop-filter blur smear bugs near curved corners.
+ */
+.device-frame__screen {
+  width: 390px;
+  height: 844px;
+  min-width: 0;
+  border-radius: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #111827;
+  user-select: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Corner mask overlay paints the bezel over the squared corners.
+ * Self-clips to the frame silhouette and depends on no ancestor's clip.
+ * z-index 30: above screen & sticky headers (10), below island/hardware (35).
+ */
+.device-frame__corner-mask {
+  position: absolute;
+  inset: 14px;
+  border-radius: 48px;
+  box-shadow: 0 0 0 24px var(--frame-bezel-color);
+  clip-path: inset(-14px round 62px);
+  pointer-events: none;
+  z-index: 30;
+}
+
+/* Dynamic Island — hardware chrome, z-index 35 */
+.device-frame__dynamic-island {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 124px;
+  height: 35px;
+  background: #000000;
+  border-radius: 20px;
+  z-index: 35;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.device-frame__camera {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #0d1224;
+  margin-left: auto;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Home Indicator Bar */
+.device-frame__home-indicator {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 138px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 3px;
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* Dark home indicator variant */
+.device-frame[data-theme="dark"] .device-frame__home-indicator {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------------------------------------------------------------------------
+ * Stage Toolbar
+ * ------------------------------------------------------------------------- */
+.stage-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  font-size: 13px;
+}
+
+.stage-toolbar button {
+  background: transparent;
+  border: none;
+  color: var(--drawer-text);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease;
+}
+
+.stage-toolbar button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stage-toolbar .badge {
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Review & Scenario Drawer
+ * ------------------------------------------------------------------------- */
+.proto-drawer {
+  width: 380px;
+  min-width: 380px;
+  background: var(--drawer-bg);
+  border-left: 1px solid var(--drawer-border);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  transition: transform 0.25s ease;
+}
+
+.proto-drawer.collapsed {
+  transform: translateX(100%);
+  position: absolute;
+  right: 0;
+}
+
+.proto-drawer__header {
+  padding: 20px;
+  border-bottom: 1px solid var(--drawer-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.proto-drawer__title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.proto-drawer__content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 20px;
+}
