@@ -1,0 +1,186 @@
+/* embed.css — Dedicated styling for embedded ProtoStage prototypes.
+ *
+ * SCOPE: Controls responsive auto-scaling inside <iframe> or host containers,
+ * dark/light/transparent embed backdrops, and the pinned attribution bar:
+ * "Built with ProtoStage by Charlie Herbozo-Vidal".
+ */
+
+:root {
+  --embed-bg: #0f1117;
+  --embed-text: #e6e8ec;
+  --embed-muted: #8b92a2;
+  --embed-brand: #818cf8;
+  --embed-brand-hover: #a5b4fc;
+  --embed-author: #f8fafc;
+  --embed-bar-bg: rgba(20, 22, 28, 0.88);
+  --embed-bar-border: rgba(255, 255, 255, 0.1);
+  --embed-btn-bg: rgba(255, 255, 255, 0.08);
+  --embed-btn-border: rgba(255, 255, 255, 0.12);
+  --embed-btn-hover: rgba(255, 255, 255, 0.18);
+  --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-theme="light"] {
+  --embed-bg: #f8fafc;
+  --embed-text: #1e293b;
+  --embed-muted: #64748b;
+  --embed-brand: #6366f1;
+  --embed-brand-hover: #4f46e5;
+  --embed-author: #0f172a;
+  --embed-bar-bg: rgba(255, 255, 255, 0.92);
+  --embed-bar-border: rgba(0, 0, 0, 0.08);
+  --embed-btn-bg: rgba(0, 0, 0, 0.05);
+  --embed-btn-border: rgba(0, 0, 0, 0.08);
+  --embed-btn-hover: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="transparent"] {
+  --embed-bg: transparent;
+}
+
+html, body.proto-embed-body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--embed-bg);
+  font-family: var(--system-font);
+  color: var(--embed-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------------------------------
+ * Embed Wrapper & Scaled Device Frame
+ * ------------------------------------------------------------------------- */
+.proto-embed-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 12px 10px 8px 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.proto-embed-viewport {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Target device frame inside embed mode */
+.proto-embed-viewport .device-frame {
+  transform-origin: center center;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* ---------------------------------------------------------------------------
+ * Attribution & Action Bar (Pinned Bottom Chrome)
+ * ------------------------------------------------------------------------- */
+.proto-embed-bar {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 14px;
+  margin-top: 6px;
+  background: var(--embed-bar-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--embed-bar-border);
+  border-radius: 9999px;
+  font-size: 11.5px;
+  color: var(--embed-muted);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  z-index: 100;
+  user-select: none;
+}
+
+.proto-embed-bar__attribution {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+.proto-embed-bar__sep {
+  color: var(--embed-muted);
+  opacity: 0.7;
+}
+
+.proto-embed-link {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.proto-embed-link--brand {
+  color: var(--embed-brand);
+  font-weight: 600;
+}
+
+.proto-embed-link--brand:hover {
+  color: var(--embed-brand-hover);
+  text-decoration: underline;
+}
+
+.proto-embed-link--author {
+  color: var(--embed-author);
+  font-weight: 600;
+}
+
+.proto-embed-link--author:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.proto-embed-bar__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+}
+
+.proto-embed-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--embed-btn-bg);
+  border: 1px solid var(--embed-btn-border);
+  color: var(--embed-text);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.proto-embed-btn:hover {
+  background: var(--embed-btn-hover);
+}
+
+.proto-embed-btn:active {
+  transform: scale(0.97);
+}
+
+.proto-embed-btn svg {
+  display: block;
+  opacity: 0.85;
+}

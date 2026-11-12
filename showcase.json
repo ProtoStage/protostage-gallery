@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "mobile-starter",
+    "title": "Mobile Starter Flow",
+    "description": "Standard 4-screen checkout and payment flow with error scenario conditions and review annotations.",
+    "author": "Charlie Herbozo-Vidal",
+    "authorSlug": "charlie-herbozo",
+    "portfolio": "https://charlie-hv97.github.io",
+    "tags": [
+      "Mobile",
+      "iOS",
+      "Commerce",
+      "Checkout"
+    ],
+    "path": "designers/charlie-herbozo/mobile-starter",
+    "publishedAt": "2026-11-09"
+  }
+]

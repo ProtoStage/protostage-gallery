@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>ProtoStage Gallery — Interactive Prototype Showcase</title>
+  <meta name="title" content="ProtoStage Gallery — Interactive Prototype Showcase">
+  <meta name="description" content="Explore live mobile and web prototypes. Built with ProtoStage by Charlie Herbozo-Vidal.">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://charlie-hv97.github.io/protostage-gallery/">
+  <meta property="og:title" content="ProtoStage Gallery — Interactive Prototype Showcase">
+  <meta property="og:description" content="Explore live mobile and web prototypes. Built with ProtoStage by Charlie Herbozo-Vidal.">
+  <meta property="og:image" content="https://charlie-hv97.github.io/protostage-gallery/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="ProtoStage">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://charlie-hv97.github.io/protostage-gallery/">
+  <meta name="twitter:title" content="ProtoStage Gallery — Interactive Prototype Showcase">
+  <meta name="twitter:description" content="Built with ProtoStage by Charlie Herbozo-Vidal.">
+  <meta name="twitter:image" content="https://charlie-hv97.github.io/protostage-gallery/assets/og-card.png">
+
+  <link rel="stylesheet" href="./gallery.css">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="nav-header">
+    <a href="./index.html" class="nav-brand">
+      <div class="brand-icon">P</div>
+      <div>
+        <span class="brand-title">ProtoStage</span>
+        <span class="brand-tag">Showcase Hub</span>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <a href="https://github.com/Charlie-HV97/protostage-gallery" target="_blank" rel="noopener noreferrer" class="github-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1 class="hero-title">Interactive Prototype Showcase</h1>
+    <p class="hero-subtitle">
+      Explore mobile and web journeys built with ProtoStage. Designers worldwide test, share, and embed live interactive experiences across their portfolios and case studies.
+    </p>
+
+    <div class="search-container">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Search flows, designers, or tags..." autocomplete="off">
+    </div>
+  </section>
+
+  <!-- Gallery Main Content -->
+  <main class="main-content">
+    <div class="grid-heading">Live Prototypes</div>
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Injected by gallery.js -->
+    </div>
+  </main>
+
+  <!-- Embed Modal -->
+  <div class="modal-overlay" id="embed-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-proto-title">Embed Prototype</h3>
+        <button type="button" class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-tabs">
+          <button type="button" class="tab-btn active" id="tab-iframe" data-tab="iframe">iFrame Embed</button>
+          <button type="button" class="tab-btn" id="tab-script" data-tab="script">Universal Script</button>
+          <button type="button" class="tab-btn" id="tab-link" data-tab="link">Direct URL</button>
+        </div>
+
+        <div class="code-container">
+          <pre class="code-box" id="embed-code-box"></pre>
+          <button type="button" class="copy-btn" id="copy-embed-btn">Copy</button>
+        </div>
+
+        <p class="modal-instruction">
+          Paste this snippet directly into Framer, Webflow, Notion, or your custom portfolio site. The prototype automatically renders inside an iPhone 15/16 frame with responsive scaling and author attribution.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="gallery-footer">
+    <p>
+      Built with <a href="https://github.com/Charlie-HV97/protostage" target="_blank" rel="noopener noreferrer">ProtoStage</a>
+      by <a href="https://charlie-hv97.github.io" target="_blank" rel="noopener noreferrer">Charlie Herbozo-Vidal</a>
+    </p>
+  </footer>
+
+  <script src="./gallery.js"></script>
+</body>
+</html>

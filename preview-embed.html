@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Preview — How ProtoStage Embed Looks</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background: #0d0f12;
+      color: #e2e8f0;
+      padding: 40px 20px 80px;
+      line-height: 1.6;
+    }
+    .portfolio-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .portfolio-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    p.lead {
+      font-size: 16px;
+      color: #94a3b8;
+      max-width: 680px;
+    }
+    .case-study-content {
+      margin-bottom: 40px;
+      font-size: 15px;
+      color: #cbd5e1;
+    }
+    .embed-showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 36px 0;
+      background: #14171f;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 30px 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .embed-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .iframe-wrapper {
+      width: 100%;
+      max-width: 440px;
+      height: 920px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .snippet-box {
+      margin-top: 40px;
+      background: #111318;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .snippet-box h3 {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 10px;
+    }
+    pre {
+      background: #08090b;
+      padding: 14px;
+      border-radius: 8px;
+      font-family: ui-monospace, Menlo, Monaco, monospace;
+      font-size: 13px;
+      color: #818cf8;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio-container">
+    <div class="portfolio-header">
+      <span class="badge">Live Embed Simulation</span>
+      <h1>Example Portfolio Case Study</h1>
+      <p class="lead">
+        This is a simulation of how your prototype renders when a designer pastes the ProtoStage embed snippet into their Webflow, Framer, or portfolio site.
+      </p>
+    </div>
+
+    <div class="case-study-content">
+      <p>
+        Below is the live embedded prototype inside an isolated container. It features a realistic iPhone 15/16 frame with Dynamic Island, camera cutout, interactive 4-screen flow, and the pinned attribution bar at the bottom.
+      </p>
+    </div>
+
+    <div class="embed-showcase">
+      <div class="embed-label">Interactive Prototype Embed</div>
+      <div class="iframe-wrapper">
+        <iframe src="./designers/charlie-herbozo/mobile-starter/embed.html" title="ProtoStage Embed Preview"></iframe>
+      </div>
+    </div>
+
+    <div class="snippet-box">
+      <h3>The HTML Snippet Used to Embed It:</h3>
+      <pre>&lt;iframe
+  src="https://charlie-hv97.github.io/protostage-gallery/designers/charlie-herbozo/mobile-starter/embed.html"
+  width="430"
+  height="920"
+  style="border:none; border-radius:24px; overflow:hidden;"
+  allowfullscreen&gt;&lt;/iframe&gt;</pre>
+    </div>
+  </div>
+</body>
+</html>
