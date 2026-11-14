@@ -2,11 +2,11 @@
 # ProtoStage — Standalone Binary Installer
 # Downloads and installs the pre-compiled proto CLI without needing source code or a Go compiler.
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/Charlie-HV97/protostage-install/main/install.sh | bash
+#   curl -fsSL https://protostage.github.io/protostage-gallery/install.sh | bash
 set -eo pipefail
 
-RELEASE_REPO="${PROTO_REPO:-Charlie-HV97/protostage-releases}"
-FALLBACK_REPO="Charlie-HV97/protostage-gallery"
+RELEASE_REPO="${PROTO_REPO:-ProtoStage/protostage-gallery}"
+FALLBACK_REPO="ProtoStage/protostage"
 DEFAULT_VERSION="0.1.0"
 BIN_NAME="proto"
 RC_MARKER="# added by protostage installer"

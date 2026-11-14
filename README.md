@@ -1,8 +1,8 @@
 # ProtoStage Gallery — Interactive Prototype Showcase
 
-> Live interactive mobile & web prototypes created with [ProtoStage](https://github.com/Charlie-HV97/protostage).
+> Live interactive mobile & web prototypes created with [ProtoStage](https://github.com/ProtoStage/protostage).
 
-Explore the live gallery at: **[https://charlie-hv97.github.io/protostage-gallery](https://charlie-hv97.github.io/protostage-gallery)**
+Explore the live gallery at: **[https://protostage.github.io/protostage-gallery](https://protostage.github.io/protostage-gallery)**
 
 ---
 
