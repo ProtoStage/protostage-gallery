@@ -1,32 +1,120 @@
 [
   {
     "slug": "mobile-starter",
-    "title": "Mobile Starter Flow",
-    "description": "Standard 4-screen checkout and payment flow with error scenario conditions and review annotations.",
+    "title": "Mobile Starter — Checkout & Card Decline",
+    "description": "Standard 4-screen retail flow featuring shopping cart drawer, address intake, and simulated card-declined edge case handling.",
     "author": "Charlie Herbozo-Vidal",
+    "authorHandle": "CharlieHV",
     "authorSlug": "charlie-herbozo",
     "portfolio": "https://charlie-hv97.github.io",
+    "viewport": "iPhone 16 Pro",
+    "archetype": "Tabbed Mobile Hub",
+    "domain": "E-Commerce & Retail",
+    "screens": 4,
+    "scenarios": 2,
+    "featured": true,
     "tags": [
       "Mobile",
       "iOS",
       "Commerce",
-      "Checkout"
+      "Checkout",
+      "Tabbed Hub"
     ],
     "path": "designers/charlie-herbozo/mobile-starter",
-    "publishedAt": "2026-11-09"
+    "publishedAt": "2026-11-12"
   },
   {
-    "slug": "mobile-starter",
-    "title": "Mobile Starter",
-    "description": "Interactive prototype 'Mobile Starter' created with ProtoStage.",
+    "slug": "patient-intake-portal",
+    "title": "Patient Intake & Health Portal",
+    "description": "HIPAA-compliant multi-step intake flow with prescription verification, insurance card scan, and live confirmation receipt.",
     "author": "Charlie Herbozo-Vidal",
+    "authorHandle": "CharlieHV",
     "authorSlug": "charlie-herbozo-vidal",
     "portfolio": "https://charlie-hv97.github.io",
+    "viewport": "iPhone 16 Pro",
+    "archetype": "Step Flow / Wizard",
+    "domain": "Healthcare & Pharmacy",
+    "screens": 5,
+    "scenarios": 3,
+    "featured": true,
     "tags": [
+      "Healthcare",
+      "Intake",
+      "Wizard",
       "Mobile",
-      "Interactive"
+      "HIPAA"
     ],
     "path": "designers/charlie-herbozo-vidal/mobile-starter",
-    "publishedAt": "2026-11-12"
+    "publishedAt": "2026-11-13"
+  },
+  {
+    "slug": "fintech-instant-wire",
+    "title": "Fintech Instant Wire & Biometric Guard",
+    "description": "High-velocity domestic transfer flow with real-time fee calculation, FaceID biometric auth check, and transaction limits.",
+    "author": "Proto Community",
+    "authorHandle": "Community",
+    "authorSlug": "community",
+    "portfolio": "https://github.com/Charlie-HV97/protostage",
+    "viewport": "Pixel 9 / Android",
+    "archetype": "Blank Slate",
+    "domain": "Fintech & Banking",
+    "screens": 3,
+    "scenarios": 2,
+    "featured": true,
+    "tags": [
+      "Fintech",
+      "Banking",
+      "Transfers",
+      "Biometrics",
+      "Android"
+    ],
+    "path": "designers/charlie-herbozo/mobile-starter",
+    "publishedAt": "2026-11-14"
+  },
+  {
+    "slug": "audio-player-hub",
+    "title": "Audio Player & Podcast Stream",
+    "description": "Persistent mini-player with bottom navigation, playlist drawer, audio waveform scrubber, and offline state handling.",
+    "author": "Charlie Herbozo-Vidal",
+    "authorHandle": "CharlieHV",
+    "authorSlug": "charlie-herbozo",
+    "portfolio": "https://charlie-hv97.github.io",
+    "viewport": "iPhone 16 Pro",
+    "archetype": "Tabbed Mobile Hub",
+    "domain": "Modern SaaS",
+    "screens": 4,
+    "scenarios": 1,
+    "featured": false,
+    "tags": [
+      "Audio",
+      "Media",
+      "iOS",
+      "Tabbed Hub"
+    ],
+    "path": "designers/charlie-herbozo/mobile-starter",
+    "publishedAt": "2026-11-10"
+  },
+  {
+    "slug": "saas-workspace-switcher",
+    "title": "SaaS Multi-Tenant Workspace Switcher",
+    "description": "Responsive desktop team management flow with workspace switcher drawer, invite members modal, and permission toggles.",
+    "author": "Proto Community",
+    "authorHandle": "Community",
+    "authorSlug": "community",
+    "portfolio": "https://github.com/Charlie-HV97/protostage",
+    "viewport": "Responsive Web",
+    "archetype": "Blank Slate",
+    "domain": "Modern SaaS",
+    "screens": 3,
+    "scenarios": 2,
+    "featured": false,
+    "tags": [
+      "SaaS",
+      "Web Desktop",
+      "Workspace",
+      "Permissions"
+    ],
+    "path": "designers/charlie-herbozo-vidal/mobile-starter",
+    "publishedAt": "2026-11-11"
   }
 ]
